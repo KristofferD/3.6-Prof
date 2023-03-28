@@ -1,19 +1,19 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Windows.Forms;
-    
-    namespace TimeTracker
+
+namespace TimeTracker
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private readonly Timer researchTimer = new Timer();
+        private readonly Timer teachingTimer = new Timer();
+        private readonly Timer lunchTimer = new Timer();
+        private readonly Timer diodeTimer = new Timer();
+        private DateTime currentTime = DateTime.Now;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -25,10 +25,6 @@ using System.Windows.Forms;
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -45,9 +41,8 @@ using System.Windows.Forms;
             this.diodeLabel = new System.Windows.Forms.Label();
             this.clockLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
+
             // researchButton
-            // 
             this.researchButton.Location = new System.Drawing.Point(98, 122);
             this.researchButton.Name = "researchButton";
             this.researchButton.Size = new System.Drawing.Size(75, 23);
@@ -55,9 +50,8 @@ using System.Windows.Forms;
             this.researchButton.Text = "Research";
             this.researchButton.UseVisualStyleBackColor = true;
             this.researchButton.Click += new System.EventHandler(this.researchButton_Click);
-            // 
+
             // teachingButton
-            // 
             this.teachingButton.Location = new System.Drawing.Point(98, 162);
             this.teachingButton.Name = "teachingButton";
             this.teachingButton.Size = new System.Drawing.Size(75, 23);
@@ -65,9 +59,8 @@ using System.Windows.Forms;
             this.teachingButton.Text = "Teaching";
             this.teachingButton.UseVisualStyleBackColor = true;
             this.teachingButton.Click += new System.EventHandler(this.teachingButton_Click);
-            // 
+
             // lunchButton
-            // 
             this.lunchButton.Location = new System.Drawing.Point(98, 201);
             this.lunchButton.Name = "lunchButton";
             this.lunchButton.Size = new System.Drawing.Size(75, 23);
@@ -75,24 +68,20 @@ using System.Windows.Forms;
             this.lunchButton.Text = "Lunch";
             this.lunchButton.UseVisualStyleBackColor = true;
             this.lunchButton.Click += new System.EventHandler(this.lunchButton_Click);
-            // 
+
             // researchTimer
-            // 
             this.researchTimer.Interval = 1000;
             this.researchTimer.Tick += new System.EventHandler(this.researchTimer_Tick);
-            // 
+
             // teachingTimer
-            // 
             this.teachingTimer.Interval = 1000;
             this.teachingTimer.Tick += new System.EventHandler(this.teachingTimer_Tick);
-            // 
+
             // lunchTimer
-            // 
             this.lunchTimer.Interval = 1000;
             this.lunchTimer.Tick += new System.EventHandler(this.lunchTimer_Tick);
 
             // researchLabel
-            // 
             this.researchLabel.AutoSize = true;
             this.researchLabel.Location = new System.Drawing.Point(42, 48);
             this.researchLabel.Name = "researchLabel";
@@ -126,6 +115,51 @@ using System.Windows.Forms;
             this.diodeLabel.Size = new System.Drawing.Size(112, 15);
             this.diodeLabel.TabIndex = 4;
             this.diodeLabel.Text = "Diode: Off (00:00:00)";
+
+            // clockLabel
+            //
+            this.clockLabel.AutoSize = true;
+            this.clockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clockLabel.Location = new System.Drawing.Point(94, 36);
+            this.clockLabel.Name = "clockLabel";
+            this.clockLabel.Size = new System.Drawing.Size(101, 31);
+            this.clockLabel.TabIndex = 5;
+            this.clockLabel.Text = "00:00:00";
+
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(629, 371);
+            this.Controls.Add(this.clockLabel);
+            this.Controls.Add(this.diodeLabel);
+            this.Controls.Add(this.lunchLabel);
+            this.Controls.Add(this.teachingLabel);
+            this.Controls.Add(this.researchLabel);
+            this.Controls.Add(this.lunchButton);
+            this.Controls.Add(this.teachingButton);
+            this.Controls.Add(this.researchButton);
+            this.Name = "MainForm";
+            this.Text = "TimeTracker";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
+
+        #endregion
+
+        private System.Windows.Forms.Button researchButton;
+        private System.Windows.Forms.Button teachingButton;
+        private System.Windows.Forms.Button lunchButton;
+        private System.Windows.Forms.Timer researchTimer;
+        private System.Windows.Forms.Timer teachingTimer;
+        private System.Windows.Forms.Timer lunchTimer;
+        private System.Windows.Forms.Label researchLabel;
+        private System.Windows.Forms.Label teachingLabel;
+        private System.Windows.Forms.Label lunchLabel;
+        private System.Windows.Forms.Timer diodeTimer;
+        private System.Windows.Forms.Label diodeLabel;
+        private System.Windows.Forms.Label clockLabel;
     }
+
 }
