@@ -13,9 +13,9 @@ namespace TimeTracker
         private int _researchTime;
         private int _teachingTime;
         private int _lunchTime;
-        private Button researchButton;
-        private Button teachingButton;
-        private Button lunchButton;
+        private Button researchButton = new Button();
+        private Button teachingButton = new Button();
+        private Button lunchButton = new Button();
         private System.Windows.Forms.Label researchLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Label teachingLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Label lunchLabel = new System.Windows.Forms.Label();

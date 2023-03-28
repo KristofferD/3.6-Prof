@@ -1,4 +1,7 @@
-﻿namespace TimeTracker
+﻿using System;
+using System.Windows.Forms;
+    
+    namespace TimeTracker
 {
     partial class MainForm
     {
