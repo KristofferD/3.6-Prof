@@ -16,15 +16,16 @@ namespace TimeTracker
         private Button researchButton;
         private Button teachingButton;
         private Button lunchButton;
-        private Label researchLabel;
-        private Label teachingLabel;
-        private Label lunchLabel;
-        private Label diodeLabel;
-        private Label clockLabel;
-        private Timer researchTimer;
-        private Timer teachingTimer;
-        private Timer lunchTimer;
-        private Timer diodeTimer;
+        private System.Windows.Forms.Label researchLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label teachingLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label lunchLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label diodeLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label clockLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Timer researchTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer teachingTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer lunchTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer diodeTimer = new System.Windows.Forms.Timer();
+
 
         public MainForm()
         {
