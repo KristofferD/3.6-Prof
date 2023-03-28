@@ -8,10 +8,10 @@ namespace TimeTracker
     {
         private System.ComponentModel.IContainer components = null;
 
-        private readonly Timer researchTimer = new Timer();
-        private readonly Timer teachingTimer = new Timer();
-        private readonly Timer lunchTimer = new Timer();
-        private readonly Timer diodeTimer = new Timer();
+        private readonly System.Windows.Forms.Timer researchTimer = new System.Windows.Forms.Timer();
+        private readonly System.Windows.Forms.Timer teachingTimer = new System.Windows.Forms.Timer();
+        private readonly System.Windows.Forms.Timer lunchTimer = new System.Windows.Forms.Timer();
+        private readonly System.Windows.Forms.Timer diodeTimer = new System.Windows.Forms.Timer();
         private DateTime currentTime = DateTime.Now;
 
         protected override void Dispose(bool disposing)
